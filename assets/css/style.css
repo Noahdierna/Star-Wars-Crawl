@@ -1,20 +1,33 @@
 body {
 	background-image: url(../images/space.jpg);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .title {
+	position: absolute;
+	text-align: justify;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 	color: #2d6e84;
 	font-size: 50px;
 	width: 70%;
 	opacity: 0;
-	margin: auto;
 	animation: opacityOn 10s;
 	animation-delay: 1s;
+	z-index: 3;
 }
 .logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 	width: 500px;
-	margin: auto;
 	animation: scaleReduce 10s;
 	animation-delay: 13s;
+	z-index: 2;
 }
 img {
 	width: 500px;
@@ -23,24 +36,39 @@ img {
 	opacity: 0;
 }
 .texte {
+	position: absolute;
 	color: yellow;
-	width: 60%;
+	top: 999px;
+	left: 50%;
+	width: 70%;
 	text-align: justify;
-	margin: auto;
+	margin: 0 20% 0 20%;
 	font-size: 50px;
 	animation: crawl 10s;
-	animation-delay: 20s;
+	animation-delay: 0s;
+	z-index: 1;
+	transform: translateX(-50%) translateY(-50%) perspective(200px) rotateX(30deg);
+	animation: crawl 60s linear;
+	animation-delay: 18s;
+	opacity: 0;
 }
 
 /* Animation */
 
 @keyframes crawl {
-	O% {
-		transform: rotateX(20deg) translateZ(0);
+	0% {
+		opacity: 0;
+		top: 100%;
+	}
+	1% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 1;
 	}
 	100% {
-		top: -6000px;
-		transform: rotateX(25deg) translateZ(-2500px);
+		opacity: 0;
+		top: -250px;
 	}
 }
 
