@@ -1,0 +1,77 @@
+body {
+	background-image: url(../images/space.jpg);
+}
+.title {
+	color: #2d6e84;
+	font-size: 50px;
+	width: 70%;
+	opacity: 0;
+	margin: auto;
+	animation: opacityOn 10s;
+	animation-delay: 1s;
+}
+.logo {
+	width: 500px;
+	margin: auto;
+	animation: scaleReduce 10s;
+	animation-delay: 13s;
+}
+img {
+	width: 500px;
+	animation: scaleReduce 10s;
+	animation-delay: 13s;
+	opacity: 0;
+}
+.texte {
+	color: yellow;
+	width: 60%;
+	text-align: justify;
+	margin: auto;
+	font-size: 50px;
+	animation: crawl 10s;
+	animation-delay: 20s;
+}
+
+/* Animation */
+
+@keyframes crawl {
+	O% {
+		transform: rotateX(20deg) translateZ(0);
+	}
+	100% {
+		top: -6000px;
+		transform: rotateX(25deg) translateZ(-2500px);
+	}
+}
+
+@keyframes scaleReduce {
+	O% {
+		width: 1;
+		opacity: 0;
+	}
+	1% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 1;
+	}
+	100% {
+		width: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes opacityOn {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
